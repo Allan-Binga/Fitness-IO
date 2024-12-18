@@ -13,7 +13,6 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 git branch: 'master', url: 'https://github.com/Allan-Binga/Fitness-IO'
-                sh 'cd Fitness-IO'
             }
         }
 
