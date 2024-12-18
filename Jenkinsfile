@@ -28,14 +28,14 @@ pipeline {
             }
         }
 
-        stage('Deploy to Netlify') {
-            steps {
-                sh '''
-        npm install -g netlify-cli
+        // stage('Deploy to Netlify') {
+        //     steps {
+        //         sh '''
+        // npm install -g netlify-cli
 
-        netlify deploy --auth $NETLIFY_TOKEN --site $SITE_ID --prod --dir=dist
-        '''
-            }
-        }
+        // netlify deploy --auth $NETLIFY_TOKEN --site $SITE_ID --prod --dir=dist
+        // '''
+        //     }
+        // }
     }
 }
