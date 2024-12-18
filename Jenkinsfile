@@ -30,7 +30,11 @@ pipeline {
 
         stage('Deploy to Netlify') {
             steps {
-                sh 'netlify deploy --prod --dir=build'
+                sh '''
+        npm install -g netlify-cli
+
+        netlify deploy --auth $NETLIFY_TOKEN --site $SITE_ID --prod --dir=dist
+        '''
             }
         }
     }
