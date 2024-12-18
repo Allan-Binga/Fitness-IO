@@ -13,13 +13,11 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 git branch: 'master', url: 'https://github.com/Allan-Binga/Fitness-IO'
-            }
-
-            steps {
                 sh 'cd Fitness-IO'
             }
         }
-        stage('Install dependencies.') {
+
+        stage('Install Dependencies') {
             steps {
                 sh 'npm install'
             }
@@ -30,8 +28,8 @@ pipeline {
                 sh 'npm run build'
             }
         }
-        
-        stage('Deploy to Netlify.') {
+
+        stage('Deploy to Netlify') {
             steps {
                 sh 'netlify deploy --prod --dir=build'
             }
